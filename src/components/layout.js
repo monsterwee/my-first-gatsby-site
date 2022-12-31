@@ -5,12 +5,17 @@ import {
   heading,
   navLinks,
   navLinkItem,
-  navLinkText
+  navLinkText,
+  siteTitle,
 } from './layout.module.css'
+import useSiteMetadata from '../hooks/useSiteMetadata'
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useSiteMetadata()
+
   return (
     <div className={container}>
+      <header className={siteTitle}>{data.title}</header>
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
